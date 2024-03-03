@@ -10,10 +10,11 @@ return id !== index
     }))
   }
 
+  // if (props.data?.length === 0) return null
   return (
     <div>
    {props.data.map((element,index)=>{
-    return  <div key={index} className="row   m-auto  d-flex  justify-content-between align-items-center"style={{width:"63%",background:"#444"}}>
+    return  <div key={index} className="row   m-auto  d-flex  justify-content-between align-items-center"style={{width:"63%",background:"#444 "}}>
       <div className='col-12 col-md-8 '>
           <div>
              <h2 style={{ color: "#FF9900" }}>{element?.name} </h2> 

@@ -28,21 +28,21 @@ const Forminput = () => {
 
   return (
     <>
-     <form onSubmit={onSubmit} className='row  py-2 mb-4 text-white m-auto'style={{width:"63%",background:"#444"}}>
+     <form onSubmit={onSubmit} className='row a-row  py-2 mb-4 text-white m-auto'style={{width:"63%",background:"#444"}}>
         <div className='col-12 col-md-4 '>
           <div>
           <label htmlFor="name">Name</label>
           <br />
         
-          <input onChange={onChange} value={value.name} type="text" name='name' id='name'className='w-100 a-input' />
+          <input onChange={onChange}  value={value.name} type="text" name='name' id='name'className='w-100 a-input' />
           </div>
         </div>
         <div className='col-12 col-md-4  '>
         <div>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">Description</label>
           <br />
           
-          <input onChange={onChange} value={value.description}  name='description' type="text" id='name'className='w-100 a-input' />
+          <input onChange={onChange}  value={value.description}  name='description' type="text" id='name'className='w-100 a-input ' />
 
           </div>
         </div>
