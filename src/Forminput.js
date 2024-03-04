@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import AddData from './AddData'
+import Botton from './Botton'
 const initialState = {
   name: "",
   description: ""
@@ -17,8 +18,14 @@ const Forminput = () => {
     }
     
     function onSubmit(e){
-        e.preventDefault()
-        setData([...data,value])
+     e.preventDefault()
+        if (value?.id === 0 || value?.id) {
+            //  /update 
+            data[value?.id] = value
+            setData([...data])
+        } else {
+            setData([...data, value])
+        }
         setValue(initialState)
         // setValue(value)
         // console.log(value)
@@ -48,13 +55,14 @@ const Forminput = () => {
         </div>
         <div className='col-12 col-md-4  '>
         <div>
-          <button className='a-button'>Add Todos</button>
+          {/* <button className='a-button'>Add Todos</button> */}
+          <div className='a-button'><Botton title={`${(value?.id === 0 || value?.id) ? "Update" : "Add"} Todos`} /></div>
           </div>
         </div>
       </form> 
       {/* <h1 className='text-white'>name= {data.name}</h1>
       <h1 className='text-white'>description={data.description}</h1> */}
-      <AddData  data={data} setData={setData} />
+      <AddData  data={data} setData={setData} setValues={setValue} editId={value?.id} />
       
     </>
   )
